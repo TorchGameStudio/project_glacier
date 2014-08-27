@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		089D9DB519AD719900E9A080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB419AD719900E9A080 /* Foundation.framework */; };
+		089D9DB719AD719900E9A080 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB619AD719900E9A080 /* CoreGraphics.framework */; };
+		089D9DB919AD719900E9A080 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB819AD719900E9A080 /* UIKit.framework */; };
+		089D9DBB19AD719900E9A080 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DBA19AD719900E9A080 /* SpriteKit.framework */; };
+		089D9DC119AD719900E9A080 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DBF19AD719900E9A080 /* InfoPlist.strings */; };
+		089D9DC319AD719900E9A080 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DC219AD719900E9A080 /* main.m */; };
+		089D9DC719AD719900E9A080 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DC619AD719900E9A080 /* AppDelegate.m */; };
+		089D9DCA19AD719900E9A080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DC819AD719900E9A080 /* Main.storyboard */; };
+		089D9DCD19AD719900E9A080 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DCC19AD719900E9A080 /* ViewController.m */; };
+		089D9DD019AD719900E9A080 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DCF19AD719900E9A080 /* MyScene.m */; };
+		089D9DD219AD719900E9A080 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DD119AD719900E9A080 /* Spaceship.png */; };
+		089D9DD419AD719900E9A080 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DD319AD719900E9A080 /* Images.xcassets */; };
+		089D9DDB19AD719900E9A080 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DDA19AD719900E9A080 /* XCTest.framework */; };
+		089D9DDC19AD719900E9A080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB419AD719900E9A080 /* Foundation.framework */; };
+		089D9DDD19AD719900E9A080 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB819AD719900E9A080 /* UIKit.framework */; };
+		089D9DE519AD719900E9A080 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DE319AD719900E9A080 /* InfoPlist.strings */; };
+		089D9DE719AD719900E9A080 /* project_glacierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DE619AD719900E9A080 /* project_glacierTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		089D9DDE19AD719900E9A080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089D9DA919AD719900E9A080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 089D9DB019AD719900E9A080;
+			remoteInfo = "project glacier";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		089D9DB119AD719900E9A080 /* project glacier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project glacier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		089D9DB419AD719900E9A080 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		089D9DB619AD719900E9A080 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		089D9DB819AD719900E9A080 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		089D9DBA19AD719900E9A080 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		089D9DBE19AD719900E9A080 /* project glacier-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "project glacier-Info.plist"; sourceTree = "<group>"; };
+		089D9DC019AD719900E9A080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089D9DC219AD719900E9A080 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		089D9DC419AD719900E9A080 /* project glacier-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "project glacier-Prefix.pch"; sourceTree = "<group>"; };
+		089D9DC519AD719900E9A080 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		089D9DC619AD719900E9A080 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		089D9DC919AD719900E9A080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		089D9DCB19AD719900E9A080 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		089D9DCC19AD719900E9A080 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		089D9DCE19AD719900E9A080 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		089D9DCF19AD719900E9A080 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		089D9DD119AD719900E9A080 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		089D9DD319AD719900E9A080 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		089D9DD919AD719900E9A080 /* project glacierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "project glacierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		089D9DDA19AD719900E9A080 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		089D9DE219AD719900E9A080 /* project glacierTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "project glacierTests-Info.plist"; sourceTree = "<group>"; };
+		089D9DE419AD719900E9A080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089D9DE619AD719900E9A080 /* project_glacierTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = project_glacierTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		089D9DAE19AD719900E9A080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089D9DB719AD719900E9A080 /* CoreGraphics.framework in Frameworks */,
+				089D9DB919AD719900E9A080 /* UIKit.framework in Frameworks */,
+				089D9DBB19AD719900E9A080 /* SpriteKit.framework in Frameworks */,
+				089D9DB519AD719900E9A080 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089D9DD619AD719900E9A080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089D9DDB19AD719900E9A080 /* XCTest.framework in Frameworks */,
+				089D9DDD19AD719900E9A080 /* UIKit.framework in Frameworks */,
+				089D9DDC19AD719900E9A080 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089D9DA819AD719900E9A080 = {
+			isa = PBXGroup;
+			children = (
+				089D9DBC19AD719900E9A080 /* project glacier */,
+				089D9DE019AD719900E9A080 /* project glacierTests */,
+				089D9DB319AD719900E9A080 /* Frameworks */,
+				089D9DB219AD719900E9A080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		089D9DB219AD719900E9A080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				089D9DB119AD719900E9A080 /* project glacier.app */,
+				089D9DD919AD719900E9A080 /* project glacierTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		089D9DB319AD719900E9A080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089D9DB419AD719900E9A080 /* Foundation.framework */,
+				089D9DB619AD719900E9A080 /* CoreGraphics.framework */,
+				089D9DB819AD719900E9A080 /* UIKit.framework */,
+				089D9DBA19AD719900E9A080 /* SpriteKit.framework */,
+				089D9DDA19AD719900E9A080 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		089D9DBC19AD719900E9A080 /* project glacier */ = {
+			isa = PBXGroup;
+			children = (
+				089D9DC519AD719900E9A080 /* AppDelegate.h */,
+				089D9DC619AD719900E9A080 /* AppDelegate.m */,
+				089D9DC819AD719900E9A080 /* Main.storyboard */,
+				089D9DCB19AD719900E9A080 /* ViewController.h */,
+				089D9DCC19AD719900E9A080 /* ViewController.m */,
+				089D9DCE19AD719900E9A080 /* MyScene.h */,
+				089D9DCF19AD719900E9A080 /* MyScene.m */,
+				089D9DD119AD719900E9A080 /* Spaceship.png */,
+				089D9DD319AD719900E9A080 /* Images.xcassets */,
+				089D9DBD19AD719900E9A080 /* Supporting Files */,
+			);
+			path = "project glacier";
+			sourceTree = "<group>";
+		};
+		089D9DBD19AD719900E9A080 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				089D9DBE19AD719900E9A080 /* project glacier-Info.plist */,
+				089D9DBF19AD719900E9A080 /* InfoPlist.strings */,
+				089D9DC219AD719900E9A080 /* main.m */,
+				089D9DC419AD719900E9A080 /* project glacier-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		089D9DE019AD719900E9A080 /* project glacierTests */ = {
+			isa = PBXGroup;
+			children = (
+				089D9DE619AD719900E9A080 /* project_glacierTests.m */,
+				089D9DE119AD719900E9A080 /* Supporting Files */,
+			);
+			path = "project glacierTests";
+			sourceTree = "<group>";
+		};
+		089D9DE119AD719900E9A080 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				089D9DE219AD719900E9A080 /* project glacierTests-Info.plist */,
+				089D9DE319AD719900E9A080 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		089D9DB019AD719900E9A080 /* project glacier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 089D9DEA19AD719900E9A080 /* Build configuration list for PBXNativeTarget "project glacier" */;
+			buildPhases = (
+				089D9DAD19AD719900E9A080 /* Sources */,
+				089D9DAE19AD719900E9A080 /* Frameworks */,
+				089D9DAF19AD719900E9A080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "project glacier";
+			productName = "project glacier";
+			productReference = 089D9DB119AD719900E9A080 /* project glacier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		089D9DD819AD719900E9A080 /* project glacierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 089D9DED19AD719900E9A080 /* Build configuration list for PBXNativeTarget "project glacierTests" */;
+			buildPhases = (
+				089D9DD519AD719900E9A080 /* Sources */,
+				089D9DD619AD719900E9A080 /* Frameworks */,
+				089D9DD719AD719900E9A080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				089D9DDF19AD719900E9A080 /* PBXTargetDependency */,
+			);
+			name = "project glacierTests";
+			productName = "project glacierTests";
+			productReference = 089D9DD919AD719900E9A080 /* project glacierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089D9DA919AD719900E9A080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Bruce Rick";
+				TargetAttributes = {
+					089D9DD819AD719900E9A080 = {
+						TestTargetID = 089D9DB019AD719900E9A080;
+					};
+				};
+			};
+			buildConfigurationList = 089D9DAC19AD719900E9A080 /* Build configuration list for PBXProject "project glacier" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 089D9DA819AD719900E9A080;
+			productRefGroup = 089D9DB219AD719900E9A080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				089D9DB019AD719900E9A080 /* project glacier */,
+				089D9DD819AD719900E9A080 /* project glacierTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		089D9DAF19AD719900E9A080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089D9DC119AD719900E9A080 /* InfoPlist.strings in Resources */,
+				089D9DD419AD719900E9A080 /* Images.xcassets in Resources */,
+				089D9DD219AD719900E9A080 /* Spaceship.png in Resources */,
+				089D9DCA19AD719900E9A080 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089D9DD719AD719900E9A080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089D9DE519AD719900E9A080 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		089D9DAD19AD719900E9A080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089D9DD019AD719900E9A080 /* MyScene.m in Sources */,
+				089D9DCD19AD719900E9A080 /* ViewController.m in Sources */,
+				089D9DC719AD719900E9A080 /* AppDelegate.m in Sources */,
+				089D9DC319AD719900E9A080 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089D9DD519AD719900E9A080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089D9DE719AD719900E9A080 /* project_glacierTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		089D9DDF19AD719900E9A080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 089D9DB019AD719900E9A080 /* project glacier */;
+			targetProxy = 089D9DDE19AD719900E9A080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089D9DBF19AD719900E9A080 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089D9DC019AD719900E9A080 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		089D9DC819AD719900E9A080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089D9DC919AD719900E9A080 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		089D9DE319AD719900E9A080 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089D9DE419AD719900E9A080 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		089D9DE819AD719900E9A080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		089D9DE919AD719900E9A080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		089D9DEB19AD719900E9A080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project glacier/project glacier-Prefix.pch";
+				INFOPLIST_FILE = "project glacier/project glacier-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		089D9DEC19AD719900E9A080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project glacier/project glacier-Prefix.pch";
+				INFOPLIST_FILE = "project glacier/project glacier-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		089D9DEE19AD719900E9A080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/project glacier.app/project glacier";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project glacier/project glacier-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "project glacierTests/project glacierTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		089D9DEF19AD719900E9A080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/project glacier.app/project glacier";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project glacier/project glacier-Prefix.pch";
+				INFOPLIST_FILE = "project glacierTests/project glacierTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		089D9DAC19AD719900E9A080 /* Build configuration list for PBXProject "project glacier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089D9DE819AD719900E9A080 /* Debug */,
+				089D9DE919AD719900E9A080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		089D9DEA19AD719900E9A080 /* Build configuration list for PBXNativeTarget "project glacier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089D9DEB19AD719900E9A080 /* Debug */,
+				089D9DEC19AD719900E9A080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		089D9DED19AD719900E9A080 /* Build configuration list for PBXNativeTarget "project glacierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089D9DEE19AD719900E9A080 /* Debug */,
+				089D9DEF19AD719900E9A080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089D9DA919AD719900E9A080 /* Project object */;
+}
