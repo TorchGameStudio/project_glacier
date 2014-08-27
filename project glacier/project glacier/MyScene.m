@@ -43,7 +43,8 @@ enum {
     float _enemiesToSpawn;
     
     NSMutableArray *_enemiesToDelete;
-    
+    int _score;
+  
 }
 
 ///--------------------------------------------------
@@ -55,19 +56,24 @@ enum {
 {
     if (self = [super initWithSize:size])
     {
-        _isGameRunning = false;
-        _previousEnemySpawnTime = 0;
-        _enemySpawnTime = ENEMY_SPAWN_START_TIME;
-        _enemySpeed = ENEMY_START_SPEED;
-        _enemiesToSpawn = 1;
-        
-        _enemiesToDelete = [[NSMutableArray alloc] init];
-        self.enemies = [[NSMutableArray alloc] init];
-        
-        [self _initPlayer];
-        [self _initMenu];
+      [self _init];
     }
     return self;
+}
+
+- (void)_init
+{
+  _isGameRunning = false;
+  _previousEnemySpawnTime = 0;
+  _enemySpawnTime = ENEMY_SPAWN_START_TIME;
+  _enemySpeed = ENEMY_START_SPEED;
+  _enemiesToSpawn = 1;
+  
+  _enemiesToDelete = [[NSMutableArray alloc] init];
+  self.enemies = [[NSMutableArray alloc] init];
+  
+  [self _initPlayer];
+  [self _initMenu];
 }
 
 - (void)_initMenu
@@ -79,9 +85,20 @@ enum {
 
 - (void)_initPlayer
 {
-    self.player = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:[self _playerStartSize]];
+    self.player = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:[self _playerStartSize]];
     self.player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     [self addChild:self.player];
+}
+
+- (void)_initScoreLabel
+{
+  [self.scoreLabel removeFromParent];
+  self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+  self.scoreLabel.text = [NSString stringWithFormat:@"%i", _score];
+  self.scoreLabel.fontSize = 20;
+  self.scoreLabel.fontColor = [SKColor greenColor];
+  self.scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height - self.scoreLabel.frame.size.height * 4);
+  [self addChild:self.scoreLabel];
 }
 
 ///--------------------------------------------------
@@ -102,10 +119,12 @@ enum {
     {
         for(SKSpriteNode *enemy in _enemies)
         {
-            if(CGRectContainsPoint(enemy.frame, touchLocation))
+            BOOL enemyTapped = CGRectContainsPoint(enemy.frame, touchLocation);
+            if(enemyTapped)
             {
                 [_enemiesToDelete addObject:enemy];
                 [enemy removeFromParent];
+                _score += 10;
             }
         }
     }
@@ -113,10 +132,14 @@ enum {
 
 - (void)update:(CFTimeInterval)currentTime
 {
+    [self _deleteEnemies];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%i", _score];
+  
     if(_isGameRunning)
     {
         if(currentTime - _previousEnemySpawnTime > _enemySpawnTime)
         {
+            _score += 1;
             _previousEnemySpawnTime = currentTime;
             //_enemySpawnTime /= 1.05;
             //_enemySpeed /= 1.05;
@@ -125,24 +148,25 @@ enum {
         
         for(SKSpriteNode *enemy in self.enemies)
         {
-            if(CGRectIntersectsRect(enemy.frame, self.player.frame))
+            BOOL enemyHitPlayer = CGRectIntersectsRect(enemy.frame, self.player.frame);
+            if(enemyHitPlayer)
             {
                 [_enemiesToDelete addObject:enemy];
-                [enemy removeFromParent];
                 
                 float playerScale = (self.player.size.width*DAMAGE_SIZE_DECREASE)/self.player.size.width*self.player.xScale;
                 [self.player setScale:playerScale];
-                
-                
-                if(self.player.size.width*self.player.xScale < DAMAGE_SIZE_DECREASE)
-                {
-                    _isGameRunning = NO;
-                }
             }
         }
-        
-        [self.enemies removeObjectsInArray:_enemiesToDelete];
-        _enemiesToDelete = [[NSMutableArray alloc] init];
+      
+        BOOL isGameOver = self.player.size.width*self.player.xScale < DAMAGE_SIZE_DECREASE;
+        if(isGameOver)
+        {
+          _isGameRunning = NO;
+          [_enemiesToDelete addObjectsFromArray:self.enemies];
+          [self _deleteEnemies];
+          [self _endGame];
+        }
+      
     }
 }
 
@@ -153,10 +177,10 @@ enum {
 
 - (void)_checkIfMenuItemTappedWithLocation:(CGPoint)touchLocation
 {
-    if(CGRectContainsPoint(self.playButton.frame, touchLocation))
+    BOOL playButtonTapped = CGRectContainsPoint(self.playButton.frame, touchLocation);
+    if(playButtonTapped)
     {
-        _isGameRunning = true;
-        self.playButton.hidden = TRUE;
+        [self _startGame];
     }
 }
 
@@ -165,7 +189,7 @@ enum {
     for(int i = 0; i < _enemiesToSpawn; i++)
     {
     
-        SKSpriteNode *enemy = [[SKSpriteNode alloc] initWithColor:[UIColor whiteColor]
+        SKSpriteNode *enemy = [[SKSpriteNode alloc] initWithColor:[SKColor whiteColor]
                                                              size:CGSizeMake(ENEMY_WIDTH, ENEMY_HEIGHT)];
         
         enemy.position = [self _randomEnemyPosition];
@@ -218,8 +242,29 @@ enum {
                       self.frame.size.height - GLACIER_MARGINS*2);
 }
 
+- (void)_startGame
+{
+  _isGameRunning = true;
+  self.playButton.hidden = TRUE;
+  _score = 0;
+  [self _initScoreLabel];
+}
 
+- (void)_endGame
+{
+    [self _init];
+    [self _initScoreLabel];
+}
 
-
+- (void)_deleteEnemies
+{
+  for(SKSpriteNode *enemy in _enemiesToDelete)
+  {
+    [enemy removeFromParent];
+  }
+  
+  [self.enemies removeObjectsInArray:_enemiesToDelete];
+  _enemiesToDelete = [[NSMutableArray alloc] init];
+}
 
 @end
