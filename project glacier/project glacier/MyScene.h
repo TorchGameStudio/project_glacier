@@ -10,4 +10,8 @@
 
 @interface MyScene : SKScene
 
+@property (nonatomic, strong) SKSpriteNode *playButton;
+@property (nonatomic, strong) SKSpriteNode *player;
+@property (nonatomic, strong) NSMutableArray *enemies;
+
 @end

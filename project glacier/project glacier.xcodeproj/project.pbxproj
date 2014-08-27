@@ -17,7 +17,6 @@
 		089D9DCA19AD719900E9A080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DC819AD719900E9A080 /* Main.storyboard */; };
 		089D9DCD19AD719900E9A080 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DCC19AD719900E9A080 /* ViewController.m */; };
 		089D9DD019AD719900E9A080 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 089D9DCF19AD719900E9A080 /* MyScene.m */; };
-		089D9DD219AD719900E9A080 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DD119AD719900E9A080 /* Spaceship.png */; };
 		089D9DD419AD719900E9A080 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089D9DD319AD719900E9A080 /* Images.xcassets */; };
 		089D9DDB19AD719900E9A080 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DDA19AD719900E9A080 /* XCTest.framework */; };
 		089D9DDC19AD719900E9A080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB419AD719900E9A080 /* Foundation.framework */; };
@@ -53,7 +52,6 @@
 		089D9DCC19AD719900E9A080 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		089D9DCE19AD719900E9A080 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		089D9DCF19AD719900E9A080 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		089D9DD119AD719900E9A080 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		089D9DD319AD719900E9A080 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		089D9DD919AD719900E9A080 /* project glacierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "project glacierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		089D9DDA19AD719900E9A080 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -128,7 +126,6 @@
 				089D9DCC19AD719900E9A080 /* ViewController.m */,
 				089D9DCE19AD719900E9A080 /* MyScene.h */,
 				089D9DCF19AD719900E9A080 /* MyScene.m */,
-				089D9DD119AD719900E9A080 /* Spaceship.png */,
 				089D9DD319AD719900E9A080 /* Images.xcassets */,
 				089D9DBD19AD719900E9A080 /* Supporting Files */,
 			);
@@ -242,7 +239,6 @@
 			files = (
 				089D9DC119AD719900E9A080 /* InfoPlist.strings in Resources */,
 				089D9DD419AD719900E9A080 /* Images.xcassets in Resources */,
-				089D9DD219AD719900E9A080 /* Spaceship.png in Resources */,
 				089D9DCA19AD719900E9A080 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +472,7 @@
 				089D9DEC19AD719900E9A080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		089D9DED19AD719900E9A080 /* Build configuration list for PBXNativeTarget "project glacierTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +481,7 @@
 				089D9DEF19AD719900E9A080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
