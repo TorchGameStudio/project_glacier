@@ -44,7 +44,6 @@ enum {
     
     NSMutableArray *_enemiesToDelete;
     int _score;
-  
 }
 
 ///--------------------------------------------------
@@ -141,8 +140,9 @@ enum {
         {
             _score += 1;
             _previousEnemySpawnTime = currentTime;
-            //_enemySpawnTime /= 1.05;
-            //_enemySpeed /= 1.05;
+            //_enemySpawnTime /= 1.01;
+            _enemySpeed /= 1.025
+          ;
             [self _spawnEnemy];
         }
         
@@ -210,29 +210,35 @@ enum {
     switch (StartPosition)
     {
             case YUP:
-            enemyPosition = CGPointMake(getRandomNumberBetween(0, self.frame.size.width),
+            enemyPosition = CGPointMake(getRandomNumberBetween(1, self.frame.size.width),
                                         self.frame.size.height + ENEMY_HEIGHT);
             break;
             
             case YDOWN:
-            enemyPosition = CGPointMake(getRandomNumberBetween(0, self.frame.size.width),
+            enemyPosition = CGPointMake(getRandomNumberBetween(1, self.frame.size.width),
                                         0 - ENEMY_HEIGHT);
             break;
             
             case XLEFT:
             enemyPosition = CGPointMake(0 - ENEMY_WIDTH,
-                                        getRandomNumberBetween(0, self.frame.size.height));
+                                        getRandomNumberBetween(1, self.frame.size.height));
             break;
             
             case XRIGHT:
             enemyPosition = CGPointMake(self.frame.size.width + ENEMY_WIDTH,
-                                        getRandomNumberBetween(0, self.frame.size.height));
+                                        getRandomNumberBetween(1, self.frame.size.height));
             break;
             
             default:
             break;
     }
-    
+  
+    //Help increase randomness
+    if(abs(enemyPosition.x - enemyPosition.y) < 50)
+    {
+      return [self _randomEnemyPosition];
+    }
+  
     return enemyPosition;
 }
 

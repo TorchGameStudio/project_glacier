@@ -11,7 +11,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void)viewDidLayoutSubviews
 {
     [super viewDidLoad];
 
@@ -36,7 +36,7 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
+        return UIInterfaceOrientationMaskLandscape;
     } else {
         return UIInterfaceOrientationMaskAll;
     }
