@@ -14,6 +14,7 @@
 #define ENEMY_START_SPEED 20
 #define ENEMY_WIDTH 30
 #define ENEMY_HEIGHT 30
+#define ENEMY_EXTRA_HIT_ZONE 20
 
 #define DAMAGE_SIZE_DECREASE 0.95
 
@@ -118,7 +119,7 @@ enum {
     {
         for(SKSpriteNode *enemy in _enemies)
         {
-            BOOL enemyTapped = CGRectContainsPoint(enemy.frame, touchLocation);
+            BOOL enemyTapped = CGRectContainsPoint([self _extraHitZoneForRect:enemy.frame], touchLocation);
             if(enemyTapped)
             {
                 [_enemiesToDelete addObject:enemy];
@@ -273,4 +274,14 @@ enum {
   _enemiesToDelete = [[NSMutableArray alloc] init];
 }
 
-@end
+- (CGRect)_extraHitZoneForRect:(CGRect)rect
+{
+    rect.size.height += ENEMY_EXTRA_HIT_ZONE *2;
+    rect.size.width += ENEMY_EXTRA_HIT_ZONE *2;
+    rect.origin.x -= ENEMY_EXTRA_HIT_ZONE;
+    rect.origin.y -= ENEMY_EXTRA_HIT_ZONE;
+    
+    return rect;
+}
+
+@end;
