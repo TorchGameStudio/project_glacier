@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		088EC1FA19B4343D00F0321B /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 088EC1F919B4343D00F0321B /* GameData.m */; };
 		089D9DB519AD719900E9A080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB419AD719900E9A080 /* Foundation.framework */; };
 		089D9DB719AD719900E9A080 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB619AD719900E9A080 /* CoreGraphics.framework */; };
 		089D9DB919AD719900E9A080 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089D9DB819AD719900E9A080 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		088EC1F819B4343D00F0321B /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		088EC1F919B4343D00F0321B /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		089D9DB119AD719900E9A080 /* project glacier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project glacier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		089D9DB419AD719900E9A080 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		089D9DB619AD719900E9A080 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				089D9DCC19AD719900E9A080 /* ViewController.m */,
 				089D9DCE19AD719900E9A080 /* MyScene.h */,
 				089D9DCF19AD719900E9A080 /* MyScene.m */,
+				088EC1F819B4343D00F0321B /* GameData.h */,
+				088EC1F919B4343D00F0321B /* GameData.m */,
 				089D9DD319AD719900E9A080 /* Images.xcassets */,
 				089D9DBD19AD719900E9A080 /* Supporting Files */,
 			);
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				089D9DD019AD719900E9A080 /* MyScene.m in Sources */,
+				088EC1FA19B4343D00F0321B /* GameData.m in Sources */,
 				089D9DCD19AD719900E9A080 /* ViewController.m in Sources */,
 				089D9DC719AD719900E9A080 /* AppDelegate.m in Sources */,
 				089D9DC319AD719900E9A080 /* main.m in Sources */,

@@ -14,5 +14,6 @@
 @property (nonatomic, strong) SKSpriteNode *player;
 @property (nonatomic, strong) NSMutableArray *enemies;
 @property (nonatomic, strong) SKLabelNode *scoreLabel;
+@property (nonatomic, strong) SKLabelNode *highScoreLabel;
 
 @end

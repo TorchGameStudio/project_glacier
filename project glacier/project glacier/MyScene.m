@@ -7,6 +7,7 @@
 //
 
 #import "MyScene.h"
+#import "GameData.h"
 
 #define GLACIER_MARGINS 20
 
@@ -63,17 +64,18 @@ enum {
 
 - (void)_init
 {
-  _isGameRunning = false;
-  _previousEnemySpawnTime = 0;
-  _enemySpawnTime = ENEMY_SPAWN_START_TIME;
-  _enemySpeed = ENEMY_START_SPEED;
-  _enemiesToSpawn = 1;
+    _isGameRunning = false;
+    _previousEnemySpawnTime = 0;
+    _enemySpawnTime = ENEMY_SPAWN_START_TIME;
+    _enemySpeed = ENEMY_START_SPEED;
+    _enemiesToSpawn = 1;
   
   _enemiesToDelete = [[NSMutableArray alloc] init];
   self.enemies = [[NSMutableArray alloc] init];
   
   [self _initPlayer];
   [self _initMenu];
+  [self _initHighScoreLabel];
 }
 
 - (void)_initMenu
@@ -92,13 +94,24 @@ enum {
 
 - (void)_initScoreLabel
 {
-  [self.scoreLabel removeFromParent];
-  self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-  self.scoreLabel.text = [NSString stringWithFormat:@"%i", _score];
-  self.scoreLabel.fontSize = 20;
-  self.scoreLabel.fontColor = [SKColor greenColor];
-  self.scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height - self.scoreLabel.frame.size.height * 4);
-  [self addChild:self.scoreLabel];
+    [self.scoreLabel removeFromParent];
+    self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%i", _score];
+    self.scoreLabel.fontSize = 20;
+    self.scoreLabel.fontColor = [SKColor greenColor];
+    self.scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height - self.scoreLabel.frame.size.height * 4);
+    [self addChild:self.scoreLabel];
+}
+
+- (void)_initHighScoreLabel
+{
+    [self.highScoreLabel removeFromParent];
+    self.highScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", [GameData sharedGameData].highScore];
+    self.highScoreLabel.fontSize = 20;
+    self.highScoreLabel.fontColor = [SKColor greenColor];
+    self.highScoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height - self.highScoreLabel.frame.size.height * 2);
+    [self addChild:self.highScoreLabel];
 }
 
 ///--------------------------------------------------
@@ -259,6 +272,13 @@ enum {
 
 - (void)_endGame
 {
+    float highscore = [GameData sharedGameData].highScore;
+    if(_score > highscore)
+    {
+        [[GameData sharedGameData] setHighScore:_score];
+        [[GameData sharedGameData] save];
+    }
+    
     [self _init];
     [self _initScoreLabel];
 }
