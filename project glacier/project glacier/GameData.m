@@ -7,10 +7,12 @@
 //
 
 #import "GameData.h"
+#import "KeychainWrapper.h"
 
 @implementation GameData
 
 static NSString* const SSGameDataHighScoreKey = @"highScore";
+static NSString* const SSGameDataChecksumKey = @"SSGameDataChecksumKey";
 
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
@@ -54,8 +56,18 @@ static NSString* const SSGameDataHighScoreKey = @"highScore";
 {
     NSData* decodedData = [NSData dataWithContentsOfFile: [GameData filePath]];
     if (decodedData) {
-        GameData* gameData = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
-        return gameData;
+        //1
+        NSString* checksumOfSavedFile = [KeychainWrapper computeSHA256DigestForData: decodedData];
+        
+        //2
+        NSString* checksumInKeychain = [KeychainWrapper keychainStringFromMatchingIdentifier: SSGameDataChecksumKey];
+        
+        //3
+        if ([checksumOfSavedFile isEqualToString: checksumInKeychain]) {
+            GameData* gameData = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
+            return gameData;
+        }
+        //4
     }
     
     return [[GameData alloc] init];
@@ -65,6 +77,15 @@ static NSString* const SSGameDataHighScoreKey = @"highScore";
 {
     NSData* encodedData = [NSKeyedArchiver archivedDataWithRootObject: self];
     [encodedData writeToFile:[GameData filePath] atomically:YES];
+    
+    NSString* checksum = [KeychainWrapper computeSHA256DigestForData: encodedData];
+    
+    if ([KeychainWrapper keychainStringFromMatchingIdentifier: SSGameDataChecksumKey]) {
+        [KeychainWrapper updateKeychainValue:checksum forIdentifier:SSGameDataChecksumKey];
+    } else {
+        [KeychainWrapper createKeychainValue:checksum forIdentifier:SSGameDataChecksumKey];
+    }
+    
 }
 
 @end
