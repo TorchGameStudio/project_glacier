@@ -13,9 +13,6 @@
 
 #define ENEMY_SPAWN_START_TIME 0.2
 #define ENEMY_START_SPEED 20
-#define ENEMY_WIDTH 30
-#define ENEMY_HEIGHT 30
-#define ENEMY_EXTRA_HIT_ZONE 20
 
 #define DAMAGE_SIZE_DECREASE 0.95
 
@@ -70,26 +67,36 @@ enum {
     _enemySpeed = ENEMY_START_SPEED;
     _enemiesToSpawn = 1;
   
-  _enemiesToDelete = [[NSMutableArray alloc] init];
-  self.enemies = [[NSMutableArray alloc] init];
-  
-  [self _initPlayer];
-  [self _initMenu];
-  [self _initHighScoreLabel];
+    _enemiesToDelete = [[NSMutableArray alloc] init];
+    self.enemies = [[NSMutableArray alloc] init];
+    [self _initGameBackground];
+    [self _initPlayer];
+    [self _initMenu];
+    [self _initHighScoreLabel];
 }
 
 - (void)_initMenu
 {
+    self.menuBackground = [[SKSpriteNode alloc] initWithImageNamed:@"Menu"];
+    self.menuBackground.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     self.playButton = [[SKSpriteNode alloc] initWithImageNamed:@"PlayButton"];
-    self.playButton.position = CGPointMake(self.frame.size.width/2,self.frame.size.height/2);
+    self.playButton.position = CGPointMake(self.frame.size.width/1.9, self.frame.size.height/5);
+    [self addChild:self.menuBackground];
     [self addChild:self.playButton];
 }
 
 - (void)_initPlayer
 {
-    self.player = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:[self _playerStartSize]];
+    self.player = [[SKSpriteNode alloc] initWithImageNamed:@"Player"];
     self.player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     [self addChild:self.player];
+}
+
+- (void)_initGameBackground
+{
+    self.gameBackground = [[SKSpriteNode alloc] initWithImageNamed:@"GameBackground"];
+    self.gameBackground.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    [self addChild:self.gameBackground];
 }
 
 - (void)_initScoreLabel
@@ -98,8 +105,8 @@ enum {
     self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
     self.scoreLabel.text = [NSString stringWithFormat:@"%i", _score];
     self.scoreLabel.fontSize = 20;
-    self.scoreLabel.fontColor = [SKColor greenColor];
-    self.scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height - self.scoreLabel.frame.size.height * 4);
+    self.scoreLabel.fontColor = [SKColor blackColor];
+    self.scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2 - self.scoreLabel.frame.size.height/2);
     [self addChild:self.scoreLabel];
 }
 
@@ -109,8 +116,8 @@ enum {
     self.highScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
     self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", [GameData sharedGameData].highScore];
     self.highScoreLabel.fontSize = 20;
-    self.highScoreLabel.fontColor = [SKColor greenColor];
-    self.highScoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height - self.highScoreLabel.frame.size.height * 2);
+    self.highScoreLabel.fontColor = [SKColor blackColor];
+    self.highScoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/5.5 - self.highScoreLabel.frame.size.height * 2);
     [self addChild:self.highScoreLabel];
 }
 
@@ -132,7 +139,7 @@ enum {
     {
         for(SKSpriteNode *enemy in _enemies)
         {
-            BOOL enemyTapped = CGRectContainsPoint([self _extraHitZoneForRect:enemy.frame], touchLocation);
+            BOOL enemyTapped = CGRectContainsPoint(enemy.frame, touchLocation);
             if(enemyTapped)
             {
                 [_enemiesToDelete addObject:enemy];
@@ -172,7 +179,7 @@ enum {
             }
         }
       
-        BOOL isGameOver = self.player.size.width*self.player.xScale < DAMAGE_SIZE_DECREASE;
+        BOOL isGameOver = self.player.size.width*self.player.xScale < DAMAGE_SIZE_DECREASE*4;
         if(isGameOver)
         {
           _isGameRunning = NO;
@@ -203,8 +210,7 @@ enum {
     for(int i = 0; i < _enemiesToSpawn; i++)
     {
     
-        SKSpriteNode *enemy = [[SKSpriteNode alloc] initWithColor:[SKColor whiteColor]
-                                                             size:CGSizeMake(ENEMY_WIDTH, ENEMY_HEIGHT)];
+        SKSpriteNode *enemy = [[SKSpriteNode alloc] initWithImageNamed:@"Enemy"];
         
         enemy.position = [self _randomEnemyPosition];
         SKAction *moveToCenter = [SKAction moveTo:self.player.position duration:_enemySpeed];
@@ -221,25 +227,27 @@ enum {
     
     int StartPosition = getRandomNumberBetween(0,3);
     
+    SKSpriteNode *enemySprite = [[SKSpriteNode alloc] initWithImageNamed:@"Enemy"];
+    
     switch (StartPosition)
     {
             case YUP:
             enemyPosition = CGPointMake(getRandomNumberBetween(1, self.frame.size.width),
-                                        self.frame.size.height + ENEMY_HEIGHT);
+                                        self.frame.size.height + enemySprite.frame.size.height);
             break;
             
             case YDOWN:
             enemyPosition = CGPointMake(getRandomNumberBetween(1, self.frame.size.width),
-                                        0 - ENEMY_HEIGHT);
+                                        0 - enemySprite.frame.size.height);
             break;
             
             case XLEFT:
-            enemyPosition = CGPointMake(0 - ENEMY_WIDTH,
+            enemyPosition = CGPointMake(0 - enemySprite.frame.size.width,
                                         getRandomNumberBetween(1, self.frame.size.height));
             break;
             
             case XRIGHT:
-            enemyPosition = CGPointMake(self.frame.size.width + ENEMY_WIDTH,
+            enemyPosition = CGPointMake(self.frame.size.width + enemySprite.frame.size.width,
                                         getRandomNumberBetween(1, self.frame.size.height));
             break;
             
@@ -264,10 +272,12 @@ enum {
 
 - (void)_startGame
 {
-  _isGameRunning = true;
-  self.playButton.hidden = TRUE;
-  _score = 0;
-  [self _initScoreLabel];
+    _isGameRunning = true;
+    self.playButton.hidden = TRUE;
+    self.menuBackground.hidden = TRUE;
+    self.highScoreLabel.hidden = TRUE;
+    _score = 0;
+    [self _initScoreLabel];
 }
 
 - (void)_endGame
@@ -292,16 +302,6 @@ enum {
   
   [self.enemies removeObjectsInArray:_enemiesToDelete];
   _enemiesToDelete = [[NSMutableArray alloc] init];
-}
-
-- (CGRect)_extraHitZoneForRect:(CGRect)rect
-{
-    rect.size.height += ENEMY_EXTRA_HIT_ZONE *2;
-    rect.size.width += ENEMY_EXTRA_HIT_ZONE *2;
-    rect.origin.x -= ENEMY_EXTRA_HIT_ZONE;
-    rect.origin.y -= ENEMY_EXTRA_HIT_ZONE;
-    
-    return rect;
 }
 
 @end;
